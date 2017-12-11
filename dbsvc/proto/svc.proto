@@ -1,0 +1,33 @@
+syntax = "proto3";
+
+package dbsvc;
+
+service DBService {
+  rpc Create(CreateReq) returns(CreateResp) {}
+}
+
+message Database {
+  string name = 1;
+  string collection = 2;
+}
+
+message Record {
+  string id = 1;
+  int64 created = 2;
+  int64 updated = 3;
+  map<string,string> metadata = 4;
+}
+
+message CommonResp {
+  int32 code = 1;
+  string message = 2;
+}
+
+message CreateReq {
+  Database db = 1;
+  Record rec = 2;
+}
+
+message CreateResp {
+  CommonResp common = 1;
+}
