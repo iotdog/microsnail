@@ -1,6 +1,6 @@
-# Database Service
+# usersvc Service
 
-service for MongoDB and Couchbase Server.
+Service introduction
 
 # Code Framework
 
@@ -12,7 +12,7 @@ definitions of service protocols using protobuf
 
 ```
 protoc -I$GOPATH/src --go_out=plugins=micro:$GOPATH/src \
-        $GOPATH/src/github.com/iotdog/microsnail/dbsvc/proto/svc.proto
+        $GOPATH/src/github.com/iotdog/microsnail/usersvc/proto/svc.proto
 ```
 
 ## handler
@@ -42,13 +42,13 @@ consul agent -dev
 * run server
 
 ```
-cd $GOPATH/src/github.com/iotdog/microsnail/dbsvc
+cd $GOPATH/src/github.com/iotdog/microsnail/usersvc
 go run main.go
 ```
 
 * run client
 
 ```
-cd $GOPATH/src/github.com/iotdog/microsnail/dbsvc/client
+cd $GOPATH/src/github.com/iotdog/microsnail/usersvc/client
 go run main.go
 ```
