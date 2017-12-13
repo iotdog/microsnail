@@ -1,3 +1,4 @@
 {
-  "svcname": "iotdog.microsnail.usersvc.prod"
+  "svcname": "iotdog.microsnail.usersvc.prod",
+  "dbsvcname": "iotdog.microsnail.dbsvc.prod"
 }

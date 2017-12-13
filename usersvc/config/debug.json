@@ -1,3 +1,4 @@
 {
-  "svcname": "iotdog.microsnail.usersvc.debug"
+  "svcname": "iotdog.microsnail.usersvc.debug",
+  "dbsvcname": "iotdog.microsnail.dbsvc.debug"
 }

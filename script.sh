@@ -59,7 +59,7 @@ init_svc()
     fi
 
     mkdir $svcname/wrapper
-    touch $svcname/wrapper/middleware.go
+    cp template/middleware.go.template $svcname/wrapper/middleware.go
   fi
 }
 

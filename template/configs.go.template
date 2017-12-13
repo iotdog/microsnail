@@ -53,7 +53,7 @@ func LoadConfigs(m RunMode, relativePath string) (*Configs, error) {
 		return nil, err
 	}
 
-	configs := &Configs{Mode: m}
+	configs = &Configs{Mode: m}
 	jerr := json.Unmarshal(content, configs)
 	if jerr != nil {
 		return nil, jerr

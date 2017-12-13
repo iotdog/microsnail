@@ -3,8 +3,8 @@ syntax = "proto3";
 package dbsvc;
 
 service DBService {
-  rpc Create(CreateReq) returns(CreateResp) {}
-  rpc Delete(DeleteReq) returns(DeleteResp) {}
+  rpc Create(CreateReq) returns(CreateResp) {} // protocol for creating document
+  rpc Delete(DeleteReq) returns(DeleteResp) {} // protocol for deleting document
 }
 
 message Database {

@@ -2,20 +2,8 @@ syntax = "proto3";
 
 package usersvc;
 
-service SampleService {
-  rpc Create(CreateReq) returns(CreateResp) {}
-}
-
-message Database {
-  string name = 1;
-  string collection = 2;
-}
-
-message Record {
-  string id = 1;
-  int64 created = 2;
-  int64 updated = 3;
-  map<string,string> metadata = 4;
+service UserService {
+  rpc Register(RegReq) returns(RegResp) {} // protocol for user registration
 }
 
 message CommonResp {
@@ -23,11 +11,13 @@ message CommonResp {
   string message = 2;
 }
 
-message CreateReq {
-  Database db = 1;
-  Record rec = 2;
+message RegReq {
+  string phone = 1;
+  string password = 2;
+  string verification = 3;
 }
 
-message CreateResp {
+message RegResp {
   CommonResp common = 1;
+  string userid = 2;
 }
