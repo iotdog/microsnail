@@ -1,3 +1,7 @@
 {
-  "svcname": "iotdog.microsnail.dbsvc.prod"
+  "svcname": "iotdog.microsnail.dbsvc.prod",
+  "mgohost": "localhost",
+  "mgoport": 27017,
+  "mgoadmin": "root",
+  "mgoadmpwd": "aaaaaa"
 }

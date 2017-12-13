@@ -4,6 +4,7 @@ package dbsvc;
 
 service DBService {
   rpc Create(CreateReq) returns(CreateResp) {}
+  rpc Delete(DeleteReq) returns(DeleteResp) {}
 }
 
 message Database {
@@ -12,10 +13,8 @@ message Database {
 }
 
 message Record {
-  string id = 1;
-  int64 created = 2;
-  int64 updated = 3;
-  map<string,string> metadata = 4;
+  int64 time = 1;
+  map<string,string> metadata = 2;
 }
 
 message CommonResp {
@@ -29,5 +28,14 @@ message CreateReq {
 }
 
 message CreateResp {
+  CommonResp common = 1;
+}
+
+message DeleteReq {
+  Database db = 1;
+  string recid = 2;
+}
+
+message DeleteResp {
   CommonResp common = 1;
 }

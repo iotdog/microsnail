@@ -1,4 +1,4 @@
-package configs
+package config
 
 import (
 	"encoding/json"
@@ -21,8 +21,12 @@ var (
 )
 
 type Configs struct {
-	Mode        RunMode
-	ServiceName string `json:"svcname"`
+	Mode             RunMode
+	ServiceName      string `json:"svcname"`
+	MongoDBHost      string `json:"mgohost"`
+	MongoDBPort      int    `json:"mgoport"`
+	MongoDBAdmin     string `json:"mgoadmin"`
+	MongoDBAdmPasswd string `json:"mgoadmpwd"`
 }
 
 func Instance() *Configs {
@@ -53,7 +57,7 @@ func LoadConfigs(m RunMode, relativePath string) (*Configs, error) {
 		return nil, err
 	}
 
-	configs := &Configs{Mode: m}
+	configs = &Configs{Mode: m}
 	jerr := json.Unmarshal(content, configs)
 	if jerr != nil {
 		return nil, jerr

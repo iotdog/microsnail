@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/iotdog/microsnail/dbsvc/configs"
+	"github.com/iotdog/microsnail/dbsvc/config"
 	"github.com/iotdog/microsnail/dbsvc/handler"
 	dbsvc "github.com/iotdog/microsnail/dbsvc/proto"
 	"github.com/iotdog/microsnail/dbsvc/wrapper"
@@ -12,7 +12,13 @@ import (
 func main() {
 	defer holmes.Start().Stop()
 
-	conf, err := configs.LoadConfigs(configs.Debug, "./configs")
+	conf, err := config.LoadConfigs(config.Debug, "./config")
+	if err != nil {
+		holmes.Errorln(err)
+		return
+	}
+
+	err = handler.InitMongoDB()
 	if err != nil {
 		holmes.Errorln(err)
 		return
