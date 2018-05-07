@@ -1,6 +1,6 @@
 # microsnail
 
-my server based on go-micro which is a microservices framework.
+my server based on [go-micro](https://github.com/micro/go-micro) which is a microservices framework.
 
 # services
 
